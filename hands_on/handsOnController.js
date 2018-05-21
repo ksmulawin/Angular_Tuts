@@ -12,8 +12,11 @@ app.controller('calculatorController',function($scope){
 						total = eval(n1+operator+n2);
 						$scope.computatedValue = checkNaN(total).toFixed(2);
 		}
-	});
-	
+
+		});
+
+
+		
 function checkNaN(n)
 {
 	return isNaN(n) == true ? 0 : n;
