@@ -1,0 +1,22 @@
+{
+	"records" : [
+		{
+			"name" : "Monkey D. Luffy",
+			"age" : "19",
+			"style" : "free fight",
+			"haircolor" : "black"
+		},
+		{
+			"name" : "Roronoa Zoro",
+			"age" : "21",
+			"style": "santoryu",
+			"haircolor" : "green"
+		},
+		{
+			"name" : "Vinsmoke Sanji",
+			"age" : "20",
+			"style": "kick",
+			"haircolor" : "yellow"
+		}
+	]
+}

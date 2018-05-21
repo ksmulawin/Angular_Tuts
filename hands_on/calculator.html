@@ -1,0 +1,24 @@
+<html >
+	<!--
+		ng = angular
+		app - a directive/ container for angular
+		https://docs.angularjs.org/guide/directive
+	-->
+	<head>
+		<title>ANGULAR JS | Simple Calculator </title>
+		<script src="../js/angular.js"></script>
+		<script src="handsOnController.js"></script>
+	</head>
+	<body ng-app="calculatorApp">
+		<div ng-controller="calculatorController">
+			<input type="text" ng-model="input1" ng-change="update()">
+			
+			<select ng-model="operator" ng-change="update()" ng-options="x for x in symbols"></select>
+			
+			<input type="text" ng-model="input2" ng-change="update()"><br/>
+		
+			{{computatedValue}}
+		</div>
+		
+	</body>
+</html>

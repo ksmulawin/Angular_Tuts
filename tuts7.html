@@ -1,0 +1,46 @@
+<html ng-app="">
+	<!--
+		ng = angular
+		app - a directive/ container for angular
+		https://docs.angularjs.org/guide/directive
+	-->
+	<head>
+		<title>ANGULAR JS | ng-repeat</title>
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+		<!--
+			it can be array or json
+				ex. 
+					language = ['PHP','JS','CSS','MYSQL'] 
+				or
+					language = [
+									{'name':'PHP','extension':'.php'},
+									{'name':'JS','extension':'.js'},
+									{'name':'CSS','extension':'.css'},
+									{'name':'MYSQL','extension':'.sql'}
+								]
+		-->
+		<div ng-init="languages=['PHP','JS','CSS','MYSQL']">
+			<!-- foreach equivalent
+					x is the new variable
+					language is the array/object variable
+			-->
+			<p ng-repeat="x in languages">
+				{{x}}
+			</p>
+		</div>
+		<hr/>
+		<div ng-init="myLanguage = [
+									{'name':'PHP','extension':'.php'},
+									{'name':'JS','extension':'.js'},
+									{'name':'CSS','extension':'.css'},
+									{'name':'MYSQL','extension':'.sql'}
+								]">
+				<p ng-repeat="mL in myLanguage">
+					Name : {{mL.name}}<br/>
+					Extension : {{mL.extension}}<br/>
+				</p>
+		</div>
+	</body>
+</html>

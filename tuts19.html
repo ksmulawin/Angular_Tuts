@@ -1,0 +1,35 @@
+<html>
+	
+	<!--
+		ng = angular
+		app - a directive/ container for angular
+		https://docs.angularjs.org/guide/directive
+	-->
+	<head>
+		 <meta charset="UTF-8"> 
+		<title>ANGULAR JS | Angular $digest</title>
+		<script src="js/angular.js"></script>
+	</head>
+	<body ng-app="mainApp">
+		<div ng-controller="app">
+			
+			{{someRandomNumber}}
+			<br/>
+			<button  type="button">Create Random Number</button>
+		</div>
+		
+		<script>
+			var app = angular.module('mainApp',[]);
+			app.controller('app',function($scope){
+				 $scope.someRandomNumber = Math.random();
+				 document.querySelector('button').addEventListener('click',function(){
+					$scope.someRandomNumber = Math.random();
+					$scope.$digest();
+				 },false);
+				 
+			});	
+			
+
+		</script>
+	</body>
+</html>

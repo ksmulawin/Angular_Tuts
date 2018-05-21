@@ -1,0 +1,49 @@
+<html ng-app="languageApp">
+	<!--
+		ng = angular
+		app - a directive/ container for angular
+		https://docs.angularjs.org/guide/directive
+	-->
+	<head>
+		<title>ANGULAR JS | Controllers </title>
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+		<div ng-controller="languages">
+			Select Language : 
+			<button ng-click="php()">PHP</button>
+			<button ng-click="js()">JS</button>
+			<button ng-click="css()">CSS</button>
+			<button ng-click="mysql()">MYSQL</button>
+			
+			<p>You have selected <u>{{selectedLanguage}}</u>.</p>
+		</div>
+		
+		<script>
+			/*
+				languageApp = ng-app
+				[] = the dependency module as for now, none.
+			*/
+			var app = angular.module('languageApp',[]);
+			//scope is a built in variable in angular if you use ['$scope'],function
+
+			app.controller('languages',function($scope){
+				$scope.selectedLanguage = 'none';
+				
+				$scope.php = function(){
+								$scope.selectedLanguage = 'PHP'
+							};
+				$scope.js = function(){
+								$scope.selectedLanguage = 'Javascript '
+							};
+				$scope.css = function(){
+								$scope.selectedLanguage = 'CSS '
+							};
+				$scope.mysql = function(){
+								$scope.selectedLanguage = 'MYSQL '
+							};
+			});
+			
+		</script>
+	</body>
+</html>

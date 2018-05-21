@@ -1,0 +1,16 @@
+<html ng-app="">
+	<!--
+		ng = angular
+		app - a directive/ container for angular
+	-->
+	<head>
+		<title>ANGULAR JS | ng-model/ng-bind</title>
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+		<input type="text" ng-model="name">
+		<!-- instead of this {{name}} use ng-bind -->
+		<h4 ng-bind="name"></h4>
+		<div contenteditable="true" ng-model="edit">1</div>
+	</body>
+</html>

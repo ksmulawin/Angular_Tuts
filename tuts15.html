@@ -1,0 +1,50 @@
+<html>
+	
+	<!--
+		ng = angular
+		app - a directive/ container for angular
+		https://docs.angularjs.org/guide/directive
+	-->
+	<head>
+		 <meta charset="UTF-8"> 
+		<title>ANGULAR JS |$http Service</title>
+		<script src="js/angular.js"></script>
+	</head>
+	<body ng-app="mainApp">
+		<!-- Basic search
+			<input type="text" ng-model="searchBox">
+		 -->
+		<!-- basic+ search -->
+		<div id="searchBox">
+			Global Search : <input type="text" ng-model="globalSearch.$"><br/>
+			Name Search : <input type="text" ng-model="globalSearch.name"><br/>
+			Age Search : <input type="text" ng-model="globalSearch.age"><br/>
+			Hair Color Search : <input type="text" ng-model="globalSearch.haircolor"><br/>
+			Fighting Style Search : <input type="text" ng-model="globalSearch.style"><br/>
+		</div>
+		
+		<div ng-controller="people">
+			<h3>Monster Trio</h3>
+			<ul>
+			<!-- | filter:model name of search box-->
+				<li ng-repeat="monsters in pirates | filter:globalSearch">
+					Name : {{ monsters.name}} <br/>
+					Age : {{ monsters.age}} <br/>
+					Hair Color : {{ monsters.haircolor}} <br/>
+					Fighting Style : {{ monsters.style}} <br/>
+					<br/>
+				</li>
+			</ul>
+		</div>
+		
+		<script>
+			var app = angular.module('mainApp',[]);
+			app.controller('people',function($scope,$http){
+				$http.get('15-db.json')
+					.success(function(result){
+						$scope.pirates =  result.records;
+					});
+			})
+		</script>
+	</body>
+</html>
